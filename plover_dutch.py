@@ -34,7 +34,7 @@ ORTHOGRAPHY_RULES = [
     #(r'^(.*) \^$', r'\1'),
 
     #!generalized prefix strokes!
-    (r'^(.*) \^ =(.*)$', r'\2\1'),
+    (r'^(.*) \^ (.*)==$', r'\2\1'),
 
 
     #list of suffixes:
@@ -74,6 +74,8 @@ ORTHOGRAPHY_RULES = [
     (r'^(.*)([aeiou])\2([bcdghjklmnpqrtvwxyz]) \^ (e|en|er|erij|end|in|ing|ingen|ig|erig|ij)$', r'\1\2\3\4'),
     #baas + en = bazen
     (r'^(.*)([aeiou])\2s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2z\3'),
+    #muis + en = muizen
+    (r'^(.*)(ai|au|ei|eu|ie|oe|oi|ou|ui)s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2z\3'),
     #beef + en = beven
     (r'^(.*)([aeiou])\2f \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2v\3'),
     #precies + e = precieze
@@ -93,11 +95,6 @@ ORTHOGRAPHY_RULES = [
     (r'^(.*in)g \^ tje$', r'\1kje'),
     #boom + -kje = boompje
     (r'^(.*m) \^ tje$', r'\1pje'),
-
-    #ongeloof + lijk = ongelofelijk
-    (r'^(.*)([aeiouy])\2(?:[ptkbdfsgwmn]|nk|ch) \^ (lijk|rijk)$', r"\1\2\3e\4"),
-    #walg + lijk = walgelijk
-    (r'^(.*[aeiouy](?:[ptkbdfsgwmn]|nk|ch)) \^ (lijk|rijk)$', r"\1e\2"),
 
 
 
