@@ -20,3 +20,12 @@ A EU	ee,		als in geen
  OEU	oi,		als in gooi
 AOEU	ij, ei of aai,	als in zijn, gein, of draai
 ```
+
+Additional rules:
+
+```
+-PG	-je		als in boom[pje], huis[je], of maat[je]
+-GS	-tie		als in poli[tie] of situa[tie]
+-BGS	-ctie		als in a[ctie]
+-Z	-e of -en	als in lop[en] of grot[e] (bij ambiguiteit: * is [e], geen * is [en])
+```

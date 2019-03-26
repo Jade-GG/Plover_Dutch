@@ -70,6 +70,9 @@ ORTHOGRAPHY_RULES = [
     #bel + en = bellen (inclusief -etje en -ie)
     (r'^(.*[bcdfghjklmnpqrstvwxyz][aeiou])([bcdfghjklmnpqrstz]) \^ (e|en|er|erij|end|in|ing|ingen|ig|erig|etje|ie)$', r'\1\2\2\3'),
 
+    #groente + en = groenten
+    (r'^(.*)([bcdfghjklmnpqrstvwxyz])(e) \^ (e|en|er|erij|end|erig)$', r'\1\2\4'),
+
     #baal + en = balen (inclusief -ij)
     (r'^(.*)([aeiou])\2([bcdghjklmnpqrtvwxyz]) \^ (e|en|er|erij|end|in|ing|ingen|ig|erig|ij)$', r'\1\2\3\4'),
     #baas + en = bazen
@@ -82,6 +85,8 @@ ORTHOGRAPHY_RULES = [
     (r'^(.*ie)s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1z\2'),
 
 
+    #koning + -kje = koninkje
+    (r'^(.*in)(g) \^ tje$', r'\1kje'),
     #baby + -tje = baby'tje
     (r'^(.*y) \^ tje$', r"\1'tje"),
     #opa + -tje = opaatje
@@ -91,57 +96,8 @@ ORTHOGRAPHY_RULES = [
     #plaat + -tje = plaatje
     (r'^(.*[bdfgklpstxz]) \^ tje$', r'\1je'),
 
-    #koning + -kje = koninkje
-    (r'^(.*in)g \^ tje$', r'\1kje'),
     #boom + -kje = boompje
     (r'^(.*m) \^ tje$', r'\1pje'),
-
-
-
-
-
-
-
-
-    # == +ly ==
-    # artistic + ly = artistically
-#    (r'^(.*[aeiou]c) \^ ly$', r'\1ally'),
-        
-    # == +ry ==      
-    # statute + ry = statutory
-#    (r'^(.*t)e \^ ry$', r'\1ory'),
-        
-    # == t +cy ==      
-    # frequent + cy = frequency (tcy/tecy removal)
-#    (r'^(.*[naeiou])te? \^ cy$', r'\1cy'),
-
-    # == +s ==
-    # establish + s = establishes (sibilant pluralization)
-#    (r'^(.*(?:s|sh|x|z|zh)) \^ s$', r'\1es'),
-    # speech + s = speeches (soft ch pluralization)
-#    (r'^(.*(?:oa|ea|i|ee|oo|au|ou|l|n|(?<![gin]a)r|t)ch) \^ s$', r'\1es'),
-    # cherry + s = cherries (consonant + y pluralization)
-#    (r'^(.+[bcdfghjklmnpqrstvwxz])y \^ s$', r'\1ies'),
-
-    # == y ==
-    # die+ing = dying
-#    (r'^(.+)ie \^ ing$', r'\1ying'),
-    # metallurgy + ist = metallurgist
-#    (r'^(.+[cdfghlmnpr])y \^ ist$', r'\1ist'),
-    # beauty + ful = beautiful (y -> i)
-#    (r'^(.+[bcdfghjklmnpqrstvwxz])y \^ ([a-hj-xz].*)$', r'\1i\2'),
-
-    # == e ==
-    # write + en = written
-#    (r'^(.+)te \^ en$', r'\1tten'),
-    # free + ed = freed 
-#    (r'^(.+e)e \^ (e.+)$', r'\1\2'),
-    # narrate + ing = narrating (silent e)
-#    (r'^(.+[bcdfghjklmnpqrstuvwxz])e \^ ([aeiouy].*)$', r'\1\2'),
-
-    # == misc ==
-    # defer + ed = deferred (consonant doubling)   XXX monitor(stress not on last syllable)
-#    (r'^(.*(?:[bcdfghjklmnprstvwxyz]|qu)[aeiou])([bcdfgklmnprtvz]) \^ ([aeiouy].*)$', r'\1\2\2\3'),
 ]
 
 ORTHOGRAPHY_RULES_ALIASES = {
