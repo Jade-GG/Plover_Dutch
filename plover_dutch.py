@@ -10,7 +10,7 @@ KEYS = (
 
 IMPLICIT_HYPHEN_KEYS = ('A-', 'O-', '5-', '0-', '-E', '-U', '*')
 
-SUFFIX_KEYS = ('G-', '-Z', '-T', '-S')
+SUFFIX_KEYS = ('G-', '-G', '-Z', '-T', '-S')
 
 NUMBER_KEY = '#'
 
@@ -77,10 +77,12 @@ ORTHOGRAPHY_RULES = [
     (r'^(.*)([aeiou])\2([bcdghjklmnpqrtvwxyz]) \^ (e|en|er|erij|end|in|ing|ingen|ig|erig|ij)$', r'\1\2\3\4'),
     #baas + en = bazen
     (r'^(.*)([aeiou])\2s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2z\3'),
+    (r'^(.*)(ij)\2s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2z\3'),
     #muis + en = muizen
-    (r'^(.*)(ai|au|ei|eu|ie|oe|oi|ou|ui)s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2z\3'),
+    (r'^(.*)(ai|au|ei|eu|ie|oe|oi|ou|ui|ij)s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2z\3'),
     #beef + en = beven
     (r'^(.*)([aeiou])\2f \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2v\3'),
+    (r'^(.*)(ij)f \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1\2v\3'),
     #precies + e = precieze
     (r'^(.*ie)s \^ (e|en|er|erij|end|in|ing|ingen|ig|erig)$', r'\1z\2'),
 
